@@ -4,7 +4,9 @@ const player2 = document.getElementById("player2");
 const p = document.getElementById("turn-player");
 const boardsInputs = document.querySelectorAll(".board-input");
 
-document.getElementById("start-game").addEventListener("click", () => {
+document.getElementById("start-game").addEventListener("click", startNewGame);
+
+function startNewGame() {
   console.clear();
   vBoard = [
     ["", "", ""],
@@ -22,7 +24,7 @@ document.getElementById("start-game").addEventListener("click", () => {
     item.classList.remove("win");
     item.addEventListener("click", makeAPlay);
   });
-});
+}
 
 function makeAPlay(ev) {
   const target = ev.currentTarget;
@@ -36,16 +38,13 @@ function makeAPlay(ev) {
     if (span.innerText === player1.value) {
       target.innerText = "X";
       vBoard[row][column] = "X";
-      console.clear();
-      console.table(vBoard);
-      target.removeEventListener("click", makeAPlay);
     } else {
       target.innerText = "O";
       vBoard[row][column] = "O";
-      console.clear();
-      console.table(vBoard);
-      target.removeEventListener("click", makeAPlay);
     }
+    console.clear();
+    console.table(vBoard);
+    target.removeEventListener("click", makeAPlay);
   } catch (error) {
     alert("Jogo encerrado! Favor iniciar nova partida.");
   }
