@@ -1,0 +1,37 @@
+main {
+  width: 320px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#players-input {
+  margin-bottom: 15px;
+}
+
+#start-game {
+  margin: 0 10px;
+  width: 300px;
+}
+
+#board {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 10px 10px;
+}
+
+.board-input {
+  background-color: #888888;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+  cursor: pointer;
+}
+
+.win {
+  background-color: #03d839;
+}
